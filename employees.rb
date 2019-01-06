@@ -43,6 +43,10 @@ class Employee
     @first_name  
   end
 
+  def first_name=(input_first_name)
+    @first_name = input_first_name    
+  end
+
   def last_name
     @last_name    
   end
@@ -64,9 +68,12 @@ end
 employee1 = Employee.new("Fred", "Flintsone", 80000, true)
 employee2 = Employee.new("Barney", "Wruble", 70000, false)
 
-p employee1.salary
+# p employee1.salary
+# p employee1.first_name
+# p employee1.last_name
+# employee1.print_info
+# employee1.give_annual_raise
+# employee1.print_info
 p employee1.first_name
-p employee1.last_name
-employee1.print_info
-employee1.give_annual_raise
-employee1.print_info
+employee1.first_name = 'Danny'
+p employee1.first_name
