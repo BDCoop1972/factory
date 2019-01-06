@@ -8,8 +8,25 @@
 # p "#{employee2[0]} #{employee2[1]} makes $#{employee2[2]} per year."
 
 #hash
-employee1 = {"first_name" => "Fred", "last_name" => "Flinstone", "salary" => 80000, "active" => true}
-employee2 = {"first_name" => "Barney", "last_name" => "Wruble", "salary" => 70000, "active" => false}
+employee1 = {
+  "first_name" => "Fred", 
+  "last_name" => "Flinstone", 
+  "salary" => 80000, 
+  "active" => true
+}
+employee2 = {
+  :first_name => "Barney", 
+  :last_name => "Wruble", 
+  :salary => 70000, 
+  :active => false
+}
+employee3 = {
+  first_name: "Betty", 
+  last_name: "Wruble", 
+  salary: 70000, 
+  active: false
+}
 
 p "#{employee1['first_name']} #{employee1['last_name']} makes $#{employee1['salary']} per year."
-p "#{employee2['first_name']} #{employee2['last_name']} makes $#{employee2['salary']} per year."
+p "#{employee2[:first_name]} #{employee2[:last_name]} makes $#{employee2[:salary]} per year."
+p "#{employee3[:first_name]} #{employee3[:last_name]} makes $#{employee3[:salary]} per year."
