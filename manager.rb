@@ -1,38 +1,39 @@
 require './employees.rb'
 require './email_reportable.rb'
 
-class Manager < Employee
-  attr_reader :employees
-  # attr_writer :first_name
-  include EmailReportable
+module Actualize
+  class Manager < Employee
+    attr_reader :employees
+      # attr_writer :first_name
+    include EmailReportable
 
-  def initialize(input_options)
-    super
-    @employees = input_options[:employees]
-  end
-
- 
-  # def send_report
-  #   p "sending reports"
-
-  # end
-
-  def give_all_raises
-    p "giving all a raise"
-
-    @employees.each do |employee|
-      employee.give_annual_raise
+    def initialize(input_options)
+      super
+      @employees = input_options[:employees]
     end
-  end
 
-  def fire_all_employees
-    @employees.each do |employee|
-      employee.active = false
+     
+      # def send_report
+      #   p "sending reports"
+
+      # end
+
+    def give_all_raises
+      p "giving all a raise"
+
+      @employees.each do |employee|
+        employee.give_annual_raise
+      end
     end
-      
+
+    def fire_all_employees
+      @employees.each do |employee|
+        employee.active = false
+      end
+          
+    end
   end
 end
-
 # manager1 = Manager.new({:first_name => "Homer", :last_name => "Simpson", :salary => 100000, :active => true, employees:[employee1, employee2]})
 
 # p manager1.

@@ -30,30 +30,31 @@ employee3 = {
 # p "#{employee1['first_name']} #{employee1['last_name']} makes $#{employee1['salary']} per year."
 # p "#{employee2[:first_name]} #{employee2[:last_name]} makes $#{employee2[:salary]} per year."
 # p "#{employee3[:first_name]} #{employee3[:last_name]} makes $#{employee3[:salary]} per year."
+module Actualize
+  class Employee
+    attr_reader :first_name, :last_name, :salary
+    attr_writer :first_name, :active
 
-class Employee
-  attr_reader :first_name, :last_name, :salary
-  attr_writer :first_name, :active
+    def initialize(input_options)
+      @first_name = input_options[:first_name]
+      @last_name = input_options[:last_name]
+      @salary = input_options[:salary]
+      @active = input_options[:active]
+    end
 
-  def initialize(input_options)
-    @first_name = input_options[:first_name]
-    @last_name = input_options[:last_name]
-    @salary = input_options[:salary]
-    @active = input_options[:active]
-  end
+    # def active(input_active)
+    #   @active = input_active
+        
+    # end
 
-  # def active(input_active)
-  #   @active = input_active
+    def print_info
+      p "#{first_name} #{last_name} makes #{salary} per year."
+    end
+
+    def give_annual_raise
+      @salary = @salary * 1.05
       
-  # end
-
-  def print_info
-    p "#{first_name} #{last_name} makes #{salary} per year."
-  end
-
-  def give_annual_raise
-    @salary = @salary * 1.05
-    
+    end
   end
 end
 
